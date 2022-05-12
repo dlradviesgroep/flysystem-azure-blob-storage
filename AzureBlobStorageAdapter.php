@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace League\Flysystem\AzureBlobStorage;
 
 use League\Flysystem\Config;
@@ -48,13 +46,13 @@ class AzureBlobStorageAdapter implements FilesystemAdapter
 
     private $mimeTypeDetector;
 
-    private int $maxResultsForContentsListing;
+    private $maxResultsForContentsListing;
 
-    private string $container;
+    private $container;
 
     private $prefixer;
 
-    private string $visibilityHandling;
+    private $visibilityHandling;
 
     public function __construct(
         BlobRestProxy $client,
