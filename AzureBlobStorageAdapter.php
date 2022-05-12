@@ -44,15 +44,15 @@ class AzureBlobStorageAdapter implements FilesystemAdapter
     const ON_VISIBILITY_THROW_ERROR = 'throw';
     const ON_VISIBILITY_IGNORE = 'ignore';
 
-    private BlobRestProxy $client;
+    private $client;
 
-    private MimeTypeDetector $mimeTypeDetector;
+    private $mimeTypeDetector;
 
     private int $maxResultsForContentsListing;
 
     private string $container;
 
-    private PathPrefixer $prefixer;
+    private $prefixer;
 
     private string $visibilityHandling;
 
@@ -62,7 +62,7 @@ class AzureBlobStorageAdapter implements FilesystemAdapter
         string $prefix = '',
         MimeTypeDetector $mimeTypeDetector = null,
         int $maxResultsForContentsListing = 5000,
-        string $visibilityHandling = self::ON_VISIBILITY_THROW_ERROR,
+        string $visibilityHandling = self::ON_VISIBILITY_THROW_ERROR
     ) {
         $this->client = $client;
         $this->container = $container;
